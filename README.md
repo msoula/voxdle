@@ -1,4 +1,4 @@
-<img align="right" src="https://i.imgur.com/53H3jzF.png" height="200" width="200">
+<img align="right" src="https://i.imgur.com/YH44Vbg.png" height="200" width="200">
 
 # Voxdle
 
