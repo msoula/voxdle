@@ -1,0 +1,864 @@
+:root {
+  /* light mode colors */
+  --bgd-color: #fff9f9;
+  --text-color: #3c3c3a;
+
+  --modal-bgd-color: #fff9f9;
+  --modal-border-color: #3c3c3a;
+
+  --keybox-bgd-color: #e3e3e3;
+  --keybox-border-color: #e3e3e3;
+  --keybox-color: #000000e6;
+
+  --letterbox-border-color: lightgrey;
+  --letterbox-bgd-color: darkgrey;
+  --letterbox-color: #3c3c3a;
+
+  --guess-correct: #09c710;
+  --guess-present: #ffc107;
+  --guess-absent : #7c7c7c;
+  --guessed-color: #fff9f9;
+
+  --snackbar-bgd-color: #ececec;
+  --snackbar-txt-color: #3c3c3a;
+
+  --confirm-bgd-color: #7ebea5;
+  --cancel-bgd-color: #e83929;
+
+  --share-button-color: #e3e3e3;
+}
+:root.dark {
+  /* light mode colors */
+  --bgd-color: #000133;
+  --text-color: #e3e3e3;
+
+  --modal-bgd-color: #000133;
+  --modal-border-color: #e3e3e3;
+
+  --keybox-border-color: #6d6d6d;
+  --keybox-bgd-color: #6d6d6d;
+  --keybox-color: #e3e3e3;
+
+  --letterbox-border-color: #6d6d6d;
+  --letterbox-bgd-color: #6d6d6d;
+  --letterbox-color: #e3e3e3;
+
+  --guess-correct: #7ebea5;
+  --guess-present: #f08300;
+  --guess-absent : #3c3c3c;
+  --guessed-color: #e3e3e3;
+
+  --snackbar-bgd-color: #ececec;
+  --snackbar-txt-color: #3c3c3a;
+
+  --share-button-color: #e3e3e3;
+}
+:root.color-blind {
+  --guess-correct: #1e88e5;
+  --guess-present: #d81b60;
+}
+
+html, body {
+  font-family: sans-serif;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: var(--text-color);
+}
+
+.game {
+  width: 100vw;
+  height: 100%;
+  display: flex;
+  background-color: var(--bgd-color);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.header {
+  max-width: 525px;
+  width: 480px;
+  flex: 0 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.header button {
+	background: none;
+	color: inherit;
+	border: none;
+	cursor: pointer;
+	outline: inherit;
+}
+
+.header button i {
+  font-size: 24px;
+}
+
+.content {
+  max-width: 525px;
+  width: 480px;
+  flex: 0 1 calc(100% - 40px);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.grid {
+  margin-top: auto;
+  margin-bottom: auto;
+  max-width: 500px;
+}
+
+.grid .row {
+  display: flex;
+  flex-direction: row;
+}
+
+.letter-box {
+  width: 62px;
+  height: 62px;
+  border: 3px solid var(--letterbox-border-color);
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin: 4px;
+}
+
+.letter-box.active {
+  border-color: var(--letterbox-color);
+}
+
+.letter {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bolder;
+  font-size: 28px;
+  position: relative;
+  z-index: 3;
+}
+
+.keyboard {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.keyboard .row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.key-box {
+  width: 46px;
+  height: 64px;
+  background-color: var(--keybox-bgd-color);
+  border: 1px solid var(--keybox-border-color);
+  border-radius: 6px;
+  box-sizing: border-box;
+  color: var(--text-color);
+  margin: 2px;
+  padding: 0;
+}
+
+.key-box.control {
+  width: 96px;
+}
+
+:root.en .key-box.control {
+  width: 71px;
+}
+
+.key {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bolder;
+  font-size: 24px;
+  position: relative;
+  z-index: 3;
+}
+.key:hover {
+  cursor: pointer;
+}
+
+a.nostyle {
+  color: inherit;
+  text-decoration: none;
+}
+
+.absent {
+  background-color: var(--guess-absent);
+  border-color: var(--guess-absent);
+  color: var(--guessed-color);
+}
+.present {
+  background-color: var(--guess-present);
+  border-color: var(--guess-present);
+  color: var(--guessed-color);
+}
+.correct {
+  background-color: var(--guess-correct);
+  border-color: var(--guess-correct);
+  color: var(--guessed-color);
+}
+:root.color-blind .letter-box.correct {
+  text-decoration: underline 4px;
+}
+
+@-webkit-keyframes reveal {
+  0%{
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+
+@keyframes reveal {
+  0%{
+    transform: rotateX(0deg);
+  }
+  50% {
+    transform: rotateX(90deg);
+  }
+  100% {
+    transform: rotateX(0deg);
+  }
+}
+.letter-box.absent,
+.letter-box.present,
+.letter-box.correct {
+  animation: reveal 1s 1 normal;
+  animation-fill-mode: forwards;
+}
+
+.letter-box.invalid {
+  animation: shake 0.82s cubic-bezier(.36,.07,.19,.97) both;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+@-webkit-keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
+}
+
+.icon-help:hover,
+.icon-microphone:hover {
+  cursor:pointer;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 10;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: #000000;
+  background-color: rgba(0, 0, 0, 0.4);
+  font-size: 16px;
+}
+
+.modal h1 {
+  font-size: 20px;
+  margin: 4px;
+}
+
+.modal h3 {
+  font-size: 18px;
+  margin: 2px;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 500px;
+  background-color: var(--modal-bgd-color);
+  margin: auto;
+  margin-top: 40px;
+  padding: 20px;
+  border: 1px solid var(--modal-border-color);
+  border-radius: 5px;
+}
+
+.modal-header {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.modal-header .close {
+  flex: 0 0 auto;
+
+  font-size: 24px;
+	background: none;
+	color: inherit;
+	border: none;
+	cursor: pointer;
+  outline: none;
+}
+
+.modal-body {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.modal-body .letter-box {
+  width: 42px;
+  height: 42px;
+  border-radius: 3px;
+}
+
+.modal-body .letter {
+  font-size: 24px;
+}
+
+.modal-body a.nostyle {
+  color: var(--guess-present);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+span.absent {
+  background-color: transparent;
+  color: var(--guess-absent);
+  font-weight: 900;
+}
+
+span.present {
+  background-color: transparent;
+  color: var(--guess-present);
+  font-weight: 900;
+}
+
+span.correct {
+  background-color: transparent;
+  color: var(--guess-correct);
+  font-weight: 900;
+}
+
+.stats .modal-body {
+  text-align: center;
+}
+
+.stats .wordle,
+.stats .definition,
+.stats .countdown {
+  font-weight: 900;
+  font-size: 24px;
+}
+
+.stats .share {
+  width: 130px;
+  height: 48px;
+  background-color: var(--guess-correct);
+  border-radius: 5px;
+  border-color: transparent;
+  border-bottom-color: var(--text-color);
+  border-right: var(--text-color);
+  color: var(--share-button-color);
+  font-size: 20px;
+}
+
+/* The snackbar - position it at the bottom and in the middle of the screen */
+/* https://www.w3schools.com/howto/howto_js_snackbar.asp */
+.snackbar {
+  visibility: hidden;
+  position: fixed;
+  z-index: 20;
+  left: 50%;
+  top: 45px;
+
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  margin-left: -166px; /** don't forget padding ! */
+
+  background-color: var(--snackbar-bgd-color); /* Black background color */
+  color: var(--snackbar-txt-color); /* White text color */
+  text-align: center; /* Centered text */
+  border-radius: 5px; /* Rounded borders */
+  padding: 16px; /* Padding */
+}
+
+/* Show the snackbar when clicking on a button (class added with JavaScript) */
+.snackbar.show {
+  visibility: visible; /* Show the snackbar */
+  /* Add animation: Take 0.5 seconds to fade in and out the snackbar.
+  However, delay the fade out process for 1 seconds */
+  -webkit-animation: fadein 0.5s, fadeout 0.5s 2s;
+  animation: fadein 0.5s, fadeout 0.5s 2s;
+}
+
+.snackbar-content {
+  flex: 1;
+}
+
+/* Animations to fade the snackbar in and out */
+@-webkit-keyframes fadein {
+  from {top: 0; opacity: 0;}
+  to {top: 45px; opacity: 1;}
+}
+
+@keyframes fadein {
+  from {top: 0; opacity: 0;}
+  to {top: 45px; opacity: 1;}
+}
+
+@-webkit-keyframes fadeout {
+  from {top: 45px; opacity: 1;}
+  to {top: 0; opacity: 0;}
+}
+
+@keyframes fadeout {
+  from {top: 45px; opacity: 1;}
+  to {top: 0; opacity: 0;}
+}
+
+/* The switch - the box around the slider */
+.modal hr {
+  width: 80%;
+}
+
+.settings .modal-content a.nostyle {
+  color: var(--text-color);
+}
+
+.settings-row {
+  display: flex;
+  width: 80%;
+  min-height: 45px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.settings-row.description {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.settings-row.description p {
+  margin: 5px;
+  line-height: 20px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 22px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(18px);
+  -ms-transform: translateX(18px);
+  transform: translateX(18px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 22px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+.disable-select {
+    user-select: none; /* supported by Chrome and Opera */
+   -webkit-user-select: none; /* Safari */
+   -khtml-user-select: none; /* Konqueror HTML */
+   -moz-user-select: none; /* Firefox */
+   -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+@media(max-width: 500px) {
+
+  .header {
+    max-width: 500px;
+    width: 440px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .content {
+    max-width: 500px;
+    width: 440px;
+  }
+
+  .letter-box {
+    width: 62px;
+    height: 62px;
+    margin: 4px;
+    border-radius: 3px;
+  }
+
+  .letter {
+    font-size: 24px;
+  }
+
+  .key-box {
+    width:  42px;
+    height: 56px;
+    margin: 2px;
+    border-radius: 3px;
+  }
+
+  .key-box.control {
+    width: 88px;
+  }
+
+  :root.en .key-box.control {
+    width: 65px;
+  }
+
+  .key {
+    font-size: 24px;
+  }
+
+  .modal-content {
+    width: 400px;
+    padding: 20px;
+  }
+
+  .modal-body .letter-box {
+    width: 28px;
+    height: 28px;
+  }
+
+  .modal-body .letter {
+    font-size: 16px;
+  }
+}
+
+@media(max-width: 460px) {
+
+  .header {
+    max-width: 460px;
+    width: 380px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .content {
+    max-width: 460px;
+    width: 380px;
+  }
+
+  .letter-box {
+    width: 62px;
+    height: 62px;
+    margin: 4px;
+    border-radius: 3px;
+  }
+
+  .letter {
+    font-size: 24px;
+  }
+
+  .key-box {
+    width: 36px;
+    height: 56px;
+    margin: 2px;
+    border-radius: 3px;
+  }
+
+  .key-box.control {
+    width: 76px;
+  }
+
+  :root.en .key-box.control {
+    width: 56px;
+  }
+
+  .key {
+    font-size: 24px;
+  }
+
+  .modal-content {
+    width: 380px;
+    padding: 10px;
+  }
+
+  .modal-body .letter-box {
+    width: 28px;
+    height: 28px;
+  }
+
+  .modal-body .letter {
+    font-size: 16px;
+  }
+
+}
+
+@media(max-width: 400px) {
+
+  .header {
+    max-width: 400px;
+    width: 355px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
+  .content {
+    max-width: 400px;
+    width: 355px;
+  }
+
+  .letter-box {
+    width: 56px;
+    height: 56px;
+    border-radius: 3px;
+  }
+
+  .letter {
+    font-size: 24px;
+  }
+
+  .key-box {
+    width: 32px;
+    height: 48px;
+    margin: 2px;
+    border-radius: 3px;
+  }
+
+  .key-box.control {
+    width: 66px;
+  }
+
+  :root.en .key-box.control {
+    width: 50px;
+  }
+
+  .key {
+    font-size: 18px;
+  }
+
+  .modal-content {
+    width: 355px;
+    padding: 10px;
+  }
+
+  .modal-body .letter-box {
+    width: 28px;
+    height: 28px;
+  }
+
+  .modal-body .letter {
+    font-size: 16px;
+  }
+}
+
+@media(max-width: 375px) {
+
+  .header {
+    max-width: 375px;
+    width: 310px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .content {
+    max-width: 375px;
+    width: 320px;
+  }
+
+  .letter-box {
+    width: 48px;
+    height: 48px;
+    border-radius: 3px;
+  }
+
+  .letter {
+    font-size: 18px;
+  }
+
+  .key-box {
+    width: 28px;
+    height: 48px;
+    margin: 2px;
+    border-radius: 3px;
+  }
+
+  .key-box.control {
+    width: 60px;
+  }
+
+  :root.en .key-box.control {
+    width: 50px;
+  }
+
+  .key {
+    font-size: 18px;
+  }
+
+  .modal-content {
+    width: 310px;
+    padding: 5px;
+    font-size: 16px;
+  }
+
+  .modal-body .letter-box {
+    width: 28px;
+    height: 28px;
+  }
+
+  .modal-body .letter {
+    font-size: 16px;
+  }
+}
+
+@media(max-width: 320px) {
+
+  .header {
+    max-width: 320px;
+    width: 310px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+
+  .content {
+    max-width: 320px;
+    width: 310px;
+  }
+
+  .letter-box {
+    width: 32px;
+    height: 32px;
+    border-radius: 3px;
+  }
+
+  .letter {
+    font-size: 18px;
+  }
+
+  .key-box {
+    width: 24px;
+    height: 42px;
+    margin: 2px;
+    border-radius: 3px;
+  }
+
+  .key-box.control {
+    width: 52px;
+  }
+
+  :root.en .key-box.control {
+    width: 38px;
+  }
+
+  .key {
+    font-size: 18px;
+  }
+
+  .modal-content {
+    width: 300px;
+    padding: 5px;
+    font-size: 16px;
+  }
+
+  .modal-body .letter-box {
+    width: 28px;
+    height: 28px;
+  }
+
+  .modal-body .letter {
+    font-size: 16px;
+  }
+
+}

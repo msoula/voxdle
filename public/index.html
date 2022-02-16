@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Voxdle - Wordle, mais avec la voix</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <meta name="description" content="Wordle, en français et avec la voix. Tentez de découvrir le wordle du jour en épelant vos propositions. Chaque jour, un nouveau mot à découvrir." />
+
+    <meta name="twitter:card" content="Wordle, en français et avec la voix. Tentez de découvrir le wordle du jour en épelant vos propositions. Chaque jour, un nouveau mot à découvrir." />
+    <meta name="twitter:site" content="@0x2042" />
+    <meta name="twitter:creator" content="@ridmsoula" />
+
+    <meta property="og:url" content="https://voxdle.u2042.com/" />
+    <meta property="og:title" content="Wordle, mais avec la voix !" />
+    <meta name="og:description" content="Wordle, en français et avec la voix. Tentez de découvrir le wordle du jour en épelant vos propositions. Chaque jour, un nouveau mot à découvrir." />
+    <meta property="og:image" content="https://i.imgur.com/uZaYn0a.png" />
+
+    <meta name="robots" content />
+    <meta name="google" content="notranslate" />
+    <meta name="author" content="u2042" />
+
+    <!-- build:css(node_modules/@fortawesome/) /assets/css/vendor.css -->
+    <link rel="stylesheet" href="/fontawesome-free/css/fontawesome.min.css" />
+    <link rel="stylesheet" href="/fontawesome-free/css/solid.min.css" />
+    <link rel="stylesheet" href="/fontawesome-free/css/brands.min.css" />
+    <!-- endbuild -->
+
+    <link rel="stylesheet" href="/assets/css/style.css" />
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LY7CV8YP5V"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-LY7CV8YP5V');
+    </script>
+  </head>
+
+  <body>
+    <noscript><strong>We're sorry but voxdle doesn't work properly without JavaScript enabled. Please enable it to continue.</strong></noscript>
+    <div class="game">
+      <div class="header">
+        <div class="header-left">
+          <button aria-label="Aide" class="icon-help">
+            <i aria-hidden="true" class="fas fa-question-circle fa-lg"></i>
+          </button>
+          <button aria-label="Activer microphone" class="icon-microphone">
+            <i aria-hidden="true" class="fas fa-microphone fa-lg"></i>
+          </button>
+        </div>
+        <div class="title">VOXDLE</div>
+        <div class="header-right">
+          <button aria-label="Statistiques" class="icon-stats">
+            <i aria-hidden="true" class="fas fa-chart-bar fa-lg"></i>
+          </button>
+          <button aria-label="Paramètres" class="icon-settings">
+            <i aria-hidden="true" class="fas fa-cog fa-lg"></i>
+          </button>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="grid">
+        </div>
+        <div class="keyboard">
+        </div>
+      </div>
+      <script src="js/app.js" type="module"></script>
+    </div>
+  </body>
+</html>

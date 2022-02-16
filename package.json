@@ -1,0 +1,28 @@
+{
+  "name": "Voxdle",
+  "title": "Wordle avec la voix",
+  "version": "0.0.1",
+  "homepage": "https://voxdle.u2042.com",
+  "author": "Mathieu Soula",
+  "devDependencies": {
+    "@babel/core": "^7.17.2",
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "browser-sync": "^2.26.13",
+    "eslint": "^8.8.0",
+    "gulp": "^4.0.2",
+    "gulp-better-rollup": "^4.0.1",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-footer": "^2.0.2",
+    "gulp-gzip": "^1.4.2",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-tar": "^3.1.0",
+    "gulp-uglify-es": "^2.0.0",
+    "gulp-usemin": "^0.3.30",
+    "natives": "^1.1.6",
+    "rollup": "^1.32.1",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0"
+  }
+}
