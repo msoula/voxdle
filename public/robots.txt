@@ -1,1 +1,3 @@
 Sitemap: https://voxdle.u2042.com/sitemap.xml
+User-agent: Twitterbot
+Disallow:
