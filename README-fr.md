@@ -71,12 +71,12 @@ La liste des wordles anglais a été récupérée ici : https://gist.github.com/
 
 ### Sons
 
-bong_001.ogg du [paquet de sons d'interface](https://www.kenney.nl/assets/interface-sounds) par [Kenney](https://www.kenney.nl/)
-drop_002.ogg du [paquet de sons d'interface](https://www.kenney.nl/assets/interface-sounds) par [Kenney](https://www.kenney.nl/)
-error_006.ogg du [paquet de sons d'interface](https://www.kenney.nl/assets/interface-sounds) par [Kenney](https://www.kenney.nl/)
-message_006.ogg du [paquet de sons d'interface](https://www.kenney.nl/assets/interface-sounds) par [Kenney](https://www.kenney.nl/)
-switch_003.ogg du [paquet de sons d'interface](https://www.kenney.nl/assets/interface-sounds) par [Kenney](https://www.kenney.nl/)
-jingles_SAX07.ogg du [paquet de jingles musicaux](https://www.kenney.nl/assets/music-jingles) par [Kenney](https://www.kenney.nl/)
-jingles_SAX10.ogg du [paquet de jingles musicaux](https://www.kenney.nl/assets/music-jingles) par [Kenney](https://www.kenney.nl/)
-jingles_STEEL00.ogg du [paquet de jingles musicaux](https://www.kenney.nl/assets/music-jingles) par [Kenney](https://www.kenney.nl/)
-jingles_STEEL16.ogg du [paquet de jingles musicaux](https://www.kenney.nl/assets/music-jingles) par [Kenney](https://www.kenney.nl/)
+* `bong_001.ogg` du [paquet de sons d'interface](https://www.kenney.nl/assets/interface-sounds) par [Kenney](https://www.kenney.nl/)
+* `drop_002.ogg` du [paquet de sons d'interface](https://www.kenney.nl/assets/interface-sounds) par [Kenney](https://www.kenney.nl/)
+* `error_006.ogg` du [paquet de sons d'interface](https://www.kenney.nl/assets/interface-sounds) par [Kenney](https://www.kenney.nl/)
+* `message_006.ogg` du [paquet de sons d'interface](https://www.kenney.nl/assets/interface-sounds) par [Kenney](https://www.kenney.nl/)
+* `switch_003.ogg` du [paquet de sons d'interface](https://www.kenney.nl/assets/interface-sounds) par [Kenney](https://www.kenney.nl/)
+* `jingles_SAX07.ogg` du [paquet de jingles musicaux](https://www.kenney.nl/assets/music-jingles) par [Kenney](https://www.kenney.nl/)
+* `jingles_SAX10.ogg` du [paquet de jingles musicaux](https://www.kenney.nl/assets/music-jingles) par [Kenney](https://www.kenney.nl/)
+* `jingles_STEEL00.ogg` du [paquet de jingles musicaux](https://www.kenney.nl/assets/music-jingles) par [Kenney](https://www.kenney.nl/)
+* `jingles_STEEL16.ogg` du [paquet de jingles musicaux](https://www.kenney.nl/assets/music-jingles) par [Kenney](https://www.kenney.nl/)
