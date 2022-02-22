@@ -1,9 +1,7 @@
-import { Context } from './context.js';
 import { Locales } from './locales.js';
 
 import Game from './game.js';
 
-// load canvases into context
 const element = document.getElementsByClassName('game')[0];
 
 // start game and get valid keys
@@ -30,25 +28,7 @@ document.onkeydown = function(e) {
 
 function onTick() {
     requestAnimationFrame(onTick);
-
-    // init
-    if (!Context.time) {
-        Context.frame = 0;
-        Context.timeNextFrame = 0;
-    }
-
-    // get time since application started
-    Context.currentTime = performance.now()/1000;
-    while (Context.time < Context.currentTime) {
-        while (Context.time < Context.timeNextFrame) {
-            Context.time += 1/16384;
-        }
-
-        game.onTick();
-
-        Context.frame++;
-        Context.timeNextFrame += 1/60;
-    }
+    game.onTick();
 }
 
 // start ticker

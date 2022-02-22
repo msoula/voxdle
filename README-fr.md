@@ -65,7 +65,7 @@ La liste des wordles anglais a été récupérée ici : https://gist.github.com/
 
 * [Wordle](https://www.nytimes.com/games/wordle/index.html), jeu original par ([@powerlanguish](https://twitter.com/powerlanguish)),
 * [Le Mot](https://wordle.louan.me/), clone en français par Louan Bengmah ([@louanben](https://twitter.com/louanben)),
-* [MOTDLE](https://motdle.herokuapp.com/), clone en français avec prise en compte des caractères accentués crée par Renaud Bédard ([@renaudbedard](https://twitter.com/louanben/renaudbedard)).
+* [MOTDLE](https://motdle.herokuapp.com/), clone en français avec prise en compte des caractères accentués crée par Renaud Bédard ([@renaudbedard](https://twitter.com/renaudbedard)).
 
 ## Ressources utilisées
 

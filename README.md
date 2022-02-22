@@ -2,7 +2,7 @@
 
 # Voxdle
 
-Voxdle is a French/English is a clone of [Wordle](https://www.nytimes.com/games/wordle/index.html), a word game created in 2021 by Josh Wardle ([@powerlanguish](https://twitter.com/powerlanguish)).
+Voxdle is a French/English clone of [Wordle](https://www.nytimes.com/games/wordle/index.html), a word game created in 2021 by Josh Wardle ([@powerlanguish](https://twitter.com/powerlanguish)).
 
 Voxdle offers the possibility to play Wordle with your microphone instead of the keyboard. To do so, it uses the features of the [Web Speech API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API) currently available :
 * on computer with Chrome, Edge and Safari\* browsers;
@@ -69,7 +69,7 @@ The list of every French wordles was established by me :)
 
 * [Wordle](https://www.nytimes.com/games/wordle/index.html), original game by ([@powerlanguish](https://twitter.com/powerlanguish)),
 * [Le Mot](https://wordle.louan.me/), French clone by ([@louanben](https://twitter.com/louanben)),
-* [MOTDLE](https://motdle.herokuapp.com/), French clone that implements French diacritics by Renaud Bédard ([@renaudbedard](https://twitter.com/louanben/renaudbedard)).
+* [MOTDLE](https://motdle.herokuapp.com/), French clone that implements French diacritics by Renaud Bédard ([@renaudbedard](https://twitter.com/renaudbedard)).
 
 ## Used assets
 
