@@ -13,8 +13,8 @@ export default class Keyboard {
     init(guesses, evaluations) {
         guesses.forEach((guess, idx) => {
             let evaluation = evaluations[idx];
-            for (let pos = 0; pos < guess.clean.length; ++pos) {
-                this.onLetterValidity(guess.clean[pos], evaluation[pos]);
+            for (let pos = 0; pos < guess.length; ++pos) {
+                this.onLetterValidity(guess[pos], evaluation[pos]);
             }
         });
     }

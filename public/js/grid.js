@@ -33,8 +33,8 @@ export default class Grid {
         });
 
         guesses.forEach((guess, idx) => {
-            for (let pos = 0; pos < guess.clean.length; ++pos) {
-                this.onLetterSpelled(idx, pos, guess.clean[pos]);
+            for (let pos = 0; pos < guess.length; ++pos) {
+                this.onLetterSpelled(idx, pos, guess[pos]);
             }
         });
         evaluations.forEach((evaluation, idx) => setTimeout(() => this.validate(idx, evaluation), idx*300));

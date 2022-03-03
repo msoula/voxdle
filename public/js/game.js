@@ -195,8 +195,25 @@ export default class Game {
         this.guesses     = this.storage.getGuesses();
         this.current     = this.guesses.length;
 
-        this.grid.init(this.guesses, this.evaluations);
-        this.keyboard.init(this.guesses, this.evaluations);
+        // decompose guesses into keys
+        let guessesLetters = this.guesses.map(guess => {
+            let result = [];
+            for (let idx = 0; idx < guess.clean.length; ) {
+                let best = '';
+                // get the best key (because of digrams)
+                this.keys.forEach(key => {
+                    if (idx === guess.clean.indexOf(key, idx) && best.length < key.length) {
+                        best = key;
+                    }
+                });
+                result.push(best);
+                idx += best.length;
+            }
+            return result;
+        });
+
+        this.grid.init(guessesLetters, this.evaluations);
+        this.keyboard.init(guessesLetters, this.evaluations);
 
         // game state may change with locale
         let storageState = this.storage.getState();

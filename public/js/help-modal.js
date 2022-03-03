@@ -12,6 +12,8 @@ function createWordElement(word, evaluation) {
         if (-1 < validity) {
             letterBox.classList.add(2 === validity ? 'correct' :
                 1 === validity ? 'present' : 'absent');
+        } else {
+            letterBox.classList.add('active');
         }
 
 
