@@ -6,13 +6,15 @@
   --modal-bgd-color: #fff9f9;
   --modal-border-color: #3c3c3a;
 
+  --letterbox-shadow-color: #3c3c3a;
+  --letterbox-border-color: #ececec;
+  --letterbox-bgd-color: #ececec;
+  --letterbox-color: #3c3c3a;
+
   --keybox-bgd-color: #e3e3e3;
   --keybox-border-color: #e3e3e3;
   --keybox-color: #000000e6;
-
-  --letterbox-border-color: lightgrey;
-  --letterbox-bgd-color: darkgrey;
-  --letterbox-color: #3c3c3a;
+  --keybox-letter-shadow-color: #3c3c3a;
 
   --guess-correct: #09c710;
   --guess-present: #ffc107;
@@ -21,9 +23,6 @@
 
   --snackbar-bgd-color: #ececec;
   --snackbar-txt-color: #3c3c3a;
-
-  --confirm-bgd-color: #7ebea5;
-  --cancel-bgd-color: #e83929;
 
   --share-button-color: #e3e3e3;
 }
@@ -35,13 +34,15 @@
   --modal-bgd-color: #000133;
   --modal-border-color: #e3e3e3;
 
-  --keybox-border-color: #6d6d6d;
-  --keybox-bgd-color: #6d6d6d;
-  --keybox-color: #e3e3e3;
-
-  --letterbox-border-color: #6d6d6d;
+  --letterbox-shadow-color: #0c0c0c;
+  --letterbox-border-color: #2d2d2d;
   --letterbox-bgd-color: #6d6d6d;
   --letterbox-color: #e3e3e3;
+
+  --keybox-border-color: #2d2d2d;
+  --keybox-bgd-color: #6d6d6d;
+  --keybox-color: #e3e3e3;
+  --keybox-letter-shadow-color: #0c0c0c;
 
   --guess-correct: #7ebea5;
   --guess-present: #f08300;
@@ -128,6 +129,7 @@ html, body {
   height: 62px;
   border: 3px solid var(--letterbox-border-color);
   border-radius: 10px;
+  box-shadow: 0px 1px 2px var(--letterbox-shadow-color);
   box-sizing: border-box;
   margin: 4px;
 }
@@ -143,7 +145,7 @@ html, body {
   align-items: center;
   justify-content: center;
   font-weight: bolder;
-  font-size: 28px;
+  font-size: 32px;
   position: relative;
   z-index: 3;
 }
@@ -165,6 +167,7 @@ html, body {
   background-color: var(--keybox-bgd-color);
   border: 1px solid var(--keybox-border-color);
   border-radius: 6px;
+  box-shadow: inset 0 -2px 3px var(--keybox-letter-shadow-color);
   box-sizing: border-box;
   color: var(--text-color);
   margin: 2px;
@@ -197,25 +200,6 @@ html, body {
 a.nostyle {
   color: inherit;
   text-decoration: none;
-}
-
-.absent {
-  background-color: var(--guess-absent);
-  border-color: var(--guess-absent);
-  color: var(--guessed-color);
-}
-.present {
-  background-color: var(--guess-present);
-  border-color: var(--guess-present);
-  color: var(--guessed-color);
-}
-.correct {
-  background-color: var(--guess-correct);
-  border-color: var(--guess-correct);
-  color: var(--guessed-color);
-}
-:root.color-blind .letter-box.correct {
-  text-decoration: underline 4px;
 }
 
 @-webkit-keyframes reveal {
@@ -362,6 +346,7 @@ a.nostyle {
 .modal-body .letter-box {
   width: 42px;
   height: 42px;
+  border-width: 2px;
   border-radius: 3px;
 }
 
@@ -589,7 +574,7 @@ input:checked + .slider:before {
   }
 
   .letter {
-    font-size: 24px;
+    font-size: 32px;
   }
 
   .key-box {
@@ -648,7 +633,7 @@ input:checked + .slider:before {
   }
 
   .letter {
-    font-size: 24px;
+    font-size: 30px;
   }
 
   .key-box {
@@ -667,7 +652,7 @@ input:checked + .slider:before {
   }
 
   .key {
-    font-size: 24px;
+    font-size: 20px;
   }
 
   .modal-content {
@@ -707,7 +692,7 @@ input:checked + .slider:before {
   }
 
   .letter {
-    font-size: 24px;
+    font-size: 28px;
   }
 
   .key-box {
@@ -765,26 +750,26 @@ input:checked + .slider:before {
   }
 
   .letter {
-    font-size: 18px;
+    font-size: 24px;
   }
 
   .key-box {
     width: 28px;
     height: 48px;
-    margin: 2px;
+    margin: 1px;
     border-radius: 3px;
   }
 
   .key-box.control {
-    width: 60px;
+    width: 58px;
   }
 
   :root.en .key-box.control {
-    width: 50px;
+    width: 43px;
   }
 
   .key {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .modal-content {
@@ -818,8 +803,9 @@ input:checked + .slider:before {
   }
 
   .letter-box {
-    width: 32px;
-    height: 32px;
+    width: 42px;
+    height: 42px;
+    border-width: 2px;
     border-radius: 3px;
   }
 
@@ -828,22 +814,21 @@ input:checked + .slider:before {
   }
 
   .key-box {
-    width: 24px;
+    width: 28px;
     height: 42px;
-    margin: 2px;
     border-radius: 3px;
   }
 
   .key-box.control {
-    width: 52px;
+    width: 58px;
   }
 
   :root.en .key-box.control {
-    width: 38px;
+    width: 43px;
   }
 
   .key {
-    font-size: 18px;
+    font-size: 16px;
   }
 
   .modal-content {
@@ -861,4 +846,23 @@ input:checked + .slider:before {
     font-size: 16px;
   }
 
+}
+
+.absent {
+  background-color: var(--guess-absent);
+  border-color: var(--guess-absent);
+  color: var(--guessed-color);
+}
+.present {
+  background-color: var(--guess-present);
+  border-color: var(--guess-present);
+  color: var(--guessed-color);
+}
+.correct {
+  background-color: var(--guess-correct);
+  border-color: var(--guess-correct);
+  color: var(--guessed-color);
+}
+:root.color-blind .letter-box.correct {
+  text-decoration: underline 4px;
 }
