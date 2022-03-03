@@ -332,6 +332,11 @@ export default class Game {
     }
 
     share(e) {
+        let button = e.target;
+        if ('i' === button.tagName.toLowerCase()) {
+            button = button.parentNode;
+        }
+
         let text = '';
         if (SUCCESS === this.state || FAILURE === this.state) {
             let step = SUCCESS === this.state ? this.current : 'X';
@@ -344,7 +349,7 @@ export default class Game {
         utils.copyClipboard(text, (err) => {
             if (!err) {
                 this.showSnackbar(Locales[this.lang].snacks.sharedClipboard);
-                e.target.innerHTML = `<i class="fas fa-copy"></i>&nbsp;${Locales[this.lang].stats.shared}`;
+                button.innerHTML = `<i class="fas fa-copy"></i>&nbsp;${Locales[this.lang].stats.shared}`;
             }
         });
     }
